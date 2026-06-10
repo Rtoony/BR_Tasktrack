@@ -12,3 +12,6 @@ tracker.db
 htmlcov/
 
 .DS_Store
+tracker-lab.db
+tracker-lab.db-shm
+tracker-lab.db-wal
