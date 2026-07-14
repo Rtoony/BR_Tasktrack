@@ -145,6 +145,13 @@ def create_app(db_path=None) -> Flask:
         from .routes.maximus import bp as maximus_bp
         app.register_blueprint(maximus_bp)
 
+    # Agent API: the Nexus agent principal surface (Ordo + AI-PC stewards)
+    # — digest/inbox/task-status/feedback parity with the personal app.
+    # Token-gated (hermes/bot scopes); inert until a token is configured.
+    if _profile.ENABLE_AGENT_API:
+        from .routes.agent_api import bp as agent_api_bp
+        app.register_blueprint(agent_api_bp)
+
     from .cli import create_admin_command, db_upgrade_command, init_db_command
     app.cli.add_command(init_db_command)
     app.cli.add_command(db_upgrade_command)

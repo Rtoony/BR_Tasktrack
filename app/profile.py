@@ -31,6 +31,7 @@ PROFILE_DEFAULTS = {
         "ENABLE_AI_INTAKE": "true",
         "ENABLE_CALENDAR_WIDGET": "true",
         "ENABLE_MAXIMUS_API": "true",
+        "ENABLE_AGENT_API": "true",
         "INTAKE_FORM_AUTH": "none",
         "INTAKE_FORM_RATE_LIMIT_PER_HR_PER_IP": "60",
         "BIND_HOST": "0.0.0.0",
@@ -44,6 +45,7 @@ PROFILE_DEFAULTS = {
         "ENABLE_AI_INTAKE": "false",
         "ENABLE_CALENDAR_WIDGET": "false",
         "ENABLE_MAXIMUS_API": "false",
+        "ENABLE_AGENT_API": "true",
         "INTAKE_FORM_AUTH": "required",
         "INTAKE_FORM_RATE_LIMIT_PER_HR_PER_IP": "10",
         "BIND_HOST": "127.0.0.1",
@@ -91,6 +93,7 @@ def get_int(key: str, default: int = 0) -> int:
 ENABLE_AI_INTAKE = get_bool("ENABLE_AI_INTAKE")
 ENABLE_CALENDAR_WIDGET = get_bool("ENABLE_CALENDAR_WIDGET")
 ENABLE_MAXIMUS_API = get_bool("ENABLE_MAXIMUS_API")
+ENABLE_AGENT_API = get_bool("ENABLE_AGENT_API")
 INTAKE_FORM_AUTH = get_str("INTAKE_FORM_AUTH")  # "none" | "required"
 INTAKE_FORM_RATE_LIMIT_PER_HR_PER_IP = get_int("INTAKE_FORM_RATE_LIMIT_PER_HR_PER_IP", 60)
 BIND_HOST = get_str("BIND_HOST")
